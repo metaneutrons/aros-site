@@ -1,0 +1,24 @@
+{
+  "name": "aros-site",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "prebuild": "node scripts/clean-output.mjs",
+    "build": "astro check --minimumFailingSeverity hint && astro build",
+    "verify": "node scripts/check-site.mjs",
+    "worker:check": "python3 scripts/check-publication.py --configuration wrangler.jsonc --assets dist && wrangler deploy --dry-run --outdir .wrangler-output",
+    "worker:deploy": "wrangler deploy",
+    "check": "python3 scripts/check-workflows.py && npm run build && npm run verify && npm run worker:check"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.7.4",
+    "astro": "7.2.9"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "typescript": "5.9.3",
+    "wrangler": "4.129.0"
+  }
+}

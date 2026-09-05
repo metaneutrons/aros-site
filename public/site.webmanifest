@@ -1,0 +1,15 @@
+{
+  "name": "AROS engineering",
+  "short_name": "AROS",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#071014",
+  "theme_color": "#071014",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
