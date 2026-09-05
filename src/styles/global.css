@@ -103,6 +103,20 @@ button:focus-visible {
   text-transform: uppercase;
 }
 
+.beta-badge {
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--orange) 58%, transparent);
+  border-radius: 999px;
+  color: var(--orange);
+  background: color-mix(in srgb, var(--orange) 9%, transparent);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.56rem;
+  font-weight: 780;
+  letter-spacing: 0.13em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 nav {
   display: flex;
   align-items: center;

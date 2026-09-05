@@ -99,6 +99,7 @@ try {
   const index = htmlByFile.get('index.html');
   for (const marker of [
     '<title>AROS — engineering for the next build</title>',
+    'class="beta-badge" aria-label="Beta — not production-ready"',
     'href="/aros-tools/"',
     'href="https://github.com/metaneutrons/AROS-NX"',
     'href="https://github.com/metaneutrons/aros-toolchains"',
