@@ -82,6 +82,7 @@ def main() -> None:
         "--proto '=https'",
         "--tlsv1.2",
         "https://aros.metaneutrons.cc/",
+        'cmp -s dist/index.html "$body"',
     ):
         if marker not in deploy:
             errors.append(f"deployment omits security marker: {marker}")
