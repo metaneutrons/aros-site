@@ -97,8 +97,7 @@ jobs:
             status=$(curl --silent --show-error --output "$body" \
               --write-out '%{http_code}' --proto '=https' --tlsv1.2 \
               --max-time 30 https://aros.metaneutrons.cc/) || status=000
-            if [[ "$status" == 200 ]] && \
-              grep -Fq '<title>AROS — engineering for the next build</title>' "$body"; then
+            if [[ "$status" == 200 ]] && cmp -s dist/index.html "$body"; then
               exit 0
             fi
             if [[ "$attempt" -lt 6 ]]; then
