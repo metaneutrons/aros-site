@@ -7,7 +7,7 @@ const projects = [
     label: 'Source integration',
     title: 'AROS-NX',
     description:
-      'An upstream-synchronized integration fork where compatibility work stays reviewable, separable, and ready for upstream submission.',
+      'An upstream-tracking integration fork where compatibility work stays reviewable, separable, and ready for upstream submission.',
     primary: { label: 'Explore the source', href: 'https://github.com/metaneutrons/AROS-NX' },
     secondary: { label: 'Upstream AROS', href: 'https://github.com/aros-development-team/AROS' },
     tone: 'cyan',
@@ -17,7 +17,7 @@ const projects = [
     label: 'Developer workflow',
     title: 'AROS tools',
     description:
-      'A typed, upstream-compatible host suite for source checkout, translation, builds, verification, diagnostics, and physical boards.',
+      'The released v0.3.12 host suite for source checkout, translation, builds, verification, diagnostics, and physical boards.',
     primary: { label: 'Read the documentation', href: '/aros-tools/' },
     secondary: { label: 'Browse the code', href: 'https://github.com/metaneutrons/aros-tools' },
     tone: 'lime',
@@ -27,8 +27,8 @@ const projects = [
     label: 'Supply chain',
     title: 'Deterministic toolchains',
     description:
-      'Reproducible cross-compilers for four development hosts and three AROS target profiles, qualified with checksums, SBOMs, and provenance.',
-    primary: { label: 'Toolchain releases', href: 'https://github.com/metaneutrons/aros-toolchains/releases' },
+      'Stable v0.1.4 cross-compilers for three development hosts and three AROS target profiles, qualified with checksums, SBOMs, and provenance.',
+    primary: { label: 'Get v0.1.4', href: 'https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4' },
     secondary: { label: 'Qualification source', href: 'https://github.com/metaneutrons/aros-toolchains' },
     tone: 'violet',
   },
@@ -116,7 +116,7 @@ const principles = [
           <p class="eyebrow"><span></span> Open · reproducible · upstream-first</p>
           <h1 id="hero-title">AROS, engineered<br />for the <em>next build.</em></h1>
           <p class="hero-lede">
-            A modern engineering layer for AROS: synchronized source, deterministic
+            A modern engineering layer for AROS: upstream-tracked source, deterministic
             cross-toolchains, dependable developer workflows, and evidence-driven releases.
           </p>
           <div class="button-row">
@@ -227,16 +227,18 @@ const principles = [
           <p class="section-tag">Current horizon</p>
           <h2 id="roadmap-title">Builds first.<br />Claims second.</h2>
           <p>
-            AROS tools is completing its initial public qualification. Deterministic toolchains
-            are available as prereleases. System images follow only after repeatable build and
-            real-hardware boot evidence.
+            Verified stable releases are available for
+            {' '}<a href="https://github.com/metaneutrons/aros-tools/releases/tag/v0.3.12">AROS tools v0.3.12</a>
+            {' '}and
+            {' '}<a href="https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4">AROS Toolchains v0.1.4</a>.
+            {' '}The site remains in beta: complete system images and hardware support need separate evidence.
           </p>
           <a class="text-link" href="/aros-tools/reference/release-status/">Read the measured release status <span aria-hidden="true">→</span></a>
         </div>
         <div class="status-board" aria-label="Ecosystem publication status">
-          <div><span class="status-dot live"></span><strong>Source</strong><small>Public · synchronized</small></div>
-          <div><span class="status-dot active"></span><strong>Tools</strong><small>Initial qualification</small></div>
-          <div><span class="status-dot live"></span><strong>Toolchains</strong><small>Public prerelease</small></div>
+          <div><span class="status-dot active"></span><strong>Source</strong><small>Public integration fork</small></div>
+          <div><span class="status-dot live"></span><strong>Tools</strong><small>Stable v0.3.12</small></div>
+          <div><span class="status-dot live"></span><strong>Toolchains</strong><small>Stable v0.1.4</small></div>
           <div><span class="status-dot planned"></span><strong>Images</strong><small>Evidence pending</small></div>
         </div>
       </section>

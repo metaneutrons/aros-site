@@ -103,9 +103,23 @@ try {
     'href="/aros-tools/"',
     'href="https://github.com/metaneutrons/AROS-NX"',
     'href="https://github.com/metaneutrons/aros-toolchains"',
+    'href="https://github.com/metaneutrons/aros-tools/releases/tag/v0.3.12"',
+    'href="https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4"',
+    'Stable v0.3.12',
+    'Stable v0.1.4',
   ]) {
     if (!index.includes(marker)) {
       fail(`landing page lacks required marker: ${marker}`);
+    }
+  }
+  for (const stale of [
+    'four development hosts',
+    'completing its initial public qualification',
+    'available as prereleases',
+    'Public prerelease',
+  ]) {
+    if (index.includes(stale)) {
+      fail(`landing page retains stale release copy: ${stale}`);
     }
   }
   console.log(
