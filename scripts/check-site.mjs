@@ -98,7 +98,7 @@ try {
   }
   const index = htmlByFile.get('index.html');
   for (const marker of [
-    '<title>AROS — engineering for the next build</title>',
+    '<title>AROS source, tools and toolchains</title>',
     'class="beta-badge" aria-label="Beta — not production-ready"',
     'href="/aros-tools/"',
     'href="https://github.com/metaneutrons/AROS-NX"',
@@ -117,6 +117,7 @@ try {
     'completing its initial public qualification',
     'available as prereleases',
     'Public prerelease',
+    'verified system images',
   ]) {
     if (index.includes(stale)) {
       fail(`landing page retains stale release copy: ${stale}`);

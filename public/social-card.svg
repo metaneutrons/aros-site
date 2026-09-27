@@ -17,8 +17,8 @@
     <circle cx="745" cy="85" r="7" fill="#d9ff66" stroke="none"/>
     <circle cx="792" cy="150" r="7" fill="#59d7ff" stroke="none"/>
   </g>
-  <text x="92" y="175" fill="#d9ff66" font-family="ui-monospace, monospace" font-size="25" letter-spacing="5">OPEN · REPRODUCIBLE · UPSTREAM-FIRST</text>
+  <text x="92" y="175" fill="#d9ff66" font-family="ui-monospace, monospace" font-size="25" letter-spacing="5">AROS-NX · AROS TOOLS · CROSS-TOOLCHAINS</text>
   <text x="86" y="330" fill="#f4f8f9" font-family="ui-sans-serif, sans-serif" font-size="112" font-weight="700">AROS</text>
-  <text x="92" y="414" fill="#aac0c8" font-family="ui-sans-serif, sans-serif" font-size="42">Engineering for the next build.</text>
+  <text x="92" y="414" fill="#aac0c8" font-family="ui-sans-serif, sans-serif" font-size="42">Source, tools and toolchains.</text>
   <text x="92" y="530" fill="#738a93" font-family="ui-monospace, monospace" font-size="24">aros.metaneutrons.cc</text>
 </svg>

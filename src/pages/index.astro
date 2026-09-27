@@ -7,7 +7,7 @@ const projects = [
     label: 'Source integration',
     title: 'AROS-NX',
     description:
-      'An upstream-tracking integration fork where compatibility work stays reviewable, separable, and ready for upstream submission.',
+      'An upstream-tracking fork for AROS patches and integrated product builds.',
     primary: { label: 'Explore the source', href: 'https://github.com/metaneutrons/AROS-NX' },
     secondary: { label: 'Upstream AROS', href: 'https://github.com/aros-development-team/AROS' },
     tone: 'cyan',
@@ -17,7 +17,7 @@ const projects = [
     label: 'Developer workflow',
     title: 'AROS tools',
     description:
-      'The released v0.3.12 host suite for source checkout, translation, builds, verification, diagnostics, and physical boards.',
+      'v0.3.12 command-line tools for source checkout, builds, toolchains, diagnostics, and boards.',
     primary: { label: 'Read the documentation', href: '/aros-tools/' },
     secondary: { label: 'Browse the code', href: 'https://github.com/metaneutrons/aros-tools' },
     tone: 'lime',
@@ -27,7 +27,7 @@ const projects = [
     label: 'Supply chain',
     title: 'Deterministic toolchains',
     description:
-      'Stable v0.1.4 cross-compilers for three development hosts and three AROS target profiles, qualified with checksums, SBOMs, and provenance.',
+      'v0.1.4 cross-compilers for Linux x86-64, Linux ARM64, and Apple silicon; PC and Raspberry Pi targets.',
     primary: { label: 'Get v0.1.4', href: 'https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4' },
     secondary: { label: 'Qualification source', href: 'https://github.com/metaneutrons/aros-toolchains' },
     tone: 'violet',
@@ -37,7 +37,7 @@ const projects = [
     label: 'Distribution',
     title: 'System images',
     description:
-      'A planned, separately verified channel for bootable machine and board images. Publication begins only when hardware evidence is complete.',
+      'No system images are published yet. Boot and hardware testing come first.',
     primary: { label: 'See the roadmap', href: '#roadmap' },
     secondary: null,
     tone: 'orange',
@@ -47,15 +47,15 @@ const projects = [
 const principles = [
   {
     title: 'Upstream first',
-    copy: 'Extensions remain isolated from the synchronized source baseline, making review and contribution practical.',
+    copy: 'Keep changes in reviewable branches that can go upstream.',
   },
   {
     title: 'Measured releases',
-    copy: 'Byte identity, relocation, compatibility, checksums, SBOMs, and provenance are gates—not release notes.',
+    copy: 'Publish after build, compatibility, checksum, and provenance checks.',
   },
   {
     title: 'Explicit failure',
-    copy: 'No hidden fallback or stale pin turns a broken assumption into a plausible-looking build.',
+    copy: 'Reject unsupported inputs instead of silently falling back.',
   },
 ];
 ---
@@ -65,28 +65,28 @@ const principles = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Upstream-first source integration, deterministic toolchains, developer workflows, and verified system images for AROS." />
+    <meta name="description" content="AROS-NX source, AROS tools, and released cross-toolchains. System images are not yet available." />
     <meta name="theme-color" content="#071014" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="AROS — engineering for the next build" />
-    <meta property="og:description" content="A reproducible engineering layer for the open AROS ecosystem." />
+    <meta property="og:title" content="AROS source, tools and toolchains" />
+    <meta property="og:description" content="AROS source, host tools, and cross-compilers in separate repositories." />
     <meta property="og:url" content="https://aros.metaneutrons.cc/" />
     <meta property="og:image" content="https://aros.metaneutrons.cc/social-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:alt" content="AROS — engineering for the next build" />
+    <meta property="og:image:alt" content="AROS source, tools and toolchains" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://aros.metaneutrons.cc/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/site.webmanifest" />
-    <title>AROS — engineering for the next build</title>
+    <title>AROS source, tools and toolchains</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'AROS engineering',
       url: 'https://aros.metaneutrons.cc/',
-      description: 'A reproducible engineering layer for the open AROS ecosystem.',
+      description: 'AROS source, host tools, and cross-compilers in separate repositories.',
     })}></script>
   </head>
   <body>
@@ -113,17 +113,17 @@ const principles = [
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-copy">
-          <p class="eyebrow"><span></span> Open · reproducible · upstream-first</p>
-          <h1 id="hero-title">AROS, engineered<br />for the <em>next build.</em></h1>
+          <p class="eyebrow"><span></span> AROS-NX · AROS tools · cross-toolchains</p>
+          <h1 id="hero-title">Build AROS<br />with <em>known inputs.</em></h1>
           <p class="hero-lede">
-            A modern engineering layer for AROS: upstream-tracked source, deterministic
-            cross-toolchains, dependable developer workflows, and evidence-driven releases.
+            AROS source, host tools, and cross-compilers in separate repositories.
+            Build from a known source revision with a selected toolchain.
           </p>
           <div class="button-row">
             <a class="button primary" href="/aros-tools/">Start with AROS tools</a>
             <a class="button secondary" href="https://github.com/metaneutrons/AROS-NX">View AROS-NX</a>
           </div>
-          <p class="independence">Independent engineering around the upstream AROS project.</p>
+          <p class="independence">An independent project; not the upstream AROS repository.</p>
         </div>
 
         <div class="build-card" aria-label="Example AROS build workflow">
@@ -155,8 +155,8 @@ const principles = [
       <section class="manifesto" aria-label="Project statement">
         <p class="section-tag">The objective</p>
         <p>
-          Keep AROS recognizable at the source boundary while making every step around it
-          {' '}<strong>repeatable, inspectable, and easier to contribute upstream.</strong>
+          Keep AROS close to upstream. Make builds
+          {' '}<strong>repeatable and patches reviewable.</strong>
         </p>
       </section>
 
@@ -164,9 +164,9 @@ const principles = [
         <div class="section-heading">
           <div>
             <p class="section-tag">One system · clear boundaries</p>
-            <h2 id="ecosystem-title">The engineering stack</h2>
+            <h2 id="ecosystem-title">Repositories and releases</h2>
           </div>
-          <p>Each component has one job, one release boundary, and an explicit relationship with upstream AROS.</p>
+          <p>Source, tools, and compilers are versioned separately.</p>
         </div>
         <div class="project-grid">
           {projects.map((project) => (
@@ -191,7 +191,7 @@ const principles = [
         <div class="section-heading compact">
           <div>
             <p class="section-tag">Source to target</p>
-            <h2 id="pipeline-title">A visible chain of trust</h2>
+            <h2 id="pipeline-title">From source to test</h2>
           </div>
         </div>
         <ol class="pipeline-list">
@@ -199,7 +199,7 @@ const principles = [
           <li><span>02</span><strong>Translate</strong><small>Explicit build semantics</small></li>
           <li><span>03</span><strong>Compile</strong><small>Released cross-toolchain</small></li>
           <li><span>04</span><strong>Verify</strong><small>Independent evidence</small></li>
-          <li><span>05</span><strong>Run</strong><small>Virtual or physical target</small></li>
+          <li><span>05</span><strong>Test</strong><small>Target-specific checks</small></li>
         </ol>
       </section>
 
@@ -207,9 +207,9 @@ const principles = [
         <div class="section-heading">
           <div>
             <p class="section-tag">Engineering principles</p>
-            <h2 id="principles-title">Strict where it matters.</h2>
+            <h2 id="principles-title">How we work</h2>
           </div>
-          <p>Modern tooling should make the difficult parts visible without obscuring the system it serves.</p>
+          <p>Rules for source changes, builds, and releases.</p>
         </div>
         <div class="principle-grid">
           {principles.map((principle, index) => (
@@ -224,29 +224,29 @@ const principles = [
 
       <section class="roadmap section-shell" id="roadmap" aria-labelledby="roadmap-title">
         <div class="roadmap-copy">
-          <p class="section-tag">Current horizon</p>
-          <h2 id="roadmap-title">Builds first.<br />Claims second.</h2>
+          <p class="section-tag">Release status</p>
+          <h2 id="roadmap-title">Tools and toolchains.<br />No images yet.</h2>
           <p>
-            Verified stable releases are available for
+            Stable releases are available for
             {' '}<a href="https://github.com/metaneutrons/aros-tools/releases/tag/v0.3.12">AROS tools v0.3.12</a>
             {' '}and
             {' '}<a href="https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4">AROS Toolchains v0.1.4</a>.
-            {' '}The site remains in beta: complete system images and hardware support need separate evidence.
+            {' '}No system images are published yet.
           </p>
-          <a class="text-link" href="/aros-tools/reference/release-status/">Read the measured release status <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="/aros-tools/reference/release-status/">See release status <span aria-hidden="true">→</span></a>
         </div>
         <div class="status-board" aria-label="Ecosystem publication status">
           <div><span class="status-dot active"></span><strong>Source</strong><small>Public integration fork</small></div>
           <div><span class="status-dot live"></span><strong>Tools</strong><small>Stable v0.3.12</small></div>
           <div><span class="status-dot live"></span><strong>Toolchains</strong><small>Stable v0.1.4</small></div>
-          <div><span class="status-dot planned"></span><strong>Images</strong><small>Evidence pending</small></div>
+          <div><span class="status-dot planned"></span><strong>Images</strong><small>Not published</small></div>
         </div>
       </section>
 
       <section class="closing">
         <div>
-          <p class="section-tag">Begin at the boundary</p>
-          <h2>Use the tools beside upstream AROS.</h2>
+          <p class="section-tag">Get started</p>
+          <h2>Build AROS with the tools.</h2>
         </div>
         <div class="button-row">
           <a class="button primary" href="/aros-tools/getting-started/quick-start/">Open the quick start</a>
@@ -260,7 +260,7 @@ const principles = [
         <span class="brand-mark" aria-hidden="true">A</span>
         <span>AROS</span>
       </a>
-      <p>Independent, open engineering around upstream AROS.</p>
+      <p>Independent project; upstream AROS is maintained separately.</p>
       <div>
         <a href="https://github.com/metaneutrons">GitHub</a>
         <a href="https://github.com/metaneutrons/aros-site/blob/main/LICENSE">GPL-3.0-or-later</a>
