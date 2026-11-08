@@ -39,6 +39,10 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Audit production and build dependencies
         run: npm audit --audit-level=high
+      - name: Refresh the release numbers from GitHub
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run sync
       - name: Run the canonical site gate
         run: npm run check
       - name: Upload verified site handoff
