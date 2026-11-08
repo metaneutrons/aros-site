@@ -9,6 +9,10 @@ name: Refresh release numbers
 on:
   schedule:
     - cron: '41 6,18 * * *'
+  # A source repository announces its release right away:
+  #   gh api repos/metaneutrons/aros-site/dispatches -f event_type=upstream-release
+  repository_dispatch:
+    types: [upstream-release]
   workflow_dispatch:
 
 permissions:
