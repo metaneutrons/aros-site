@@ -1,0 +1,42 @@
+name: Refresh release numbers
+
+# The release numbers on the landing page come from aros-tools and
+# aros-toolchains. The deploy workflow fetches them while it builds, so this
+# workflow only decides whether a deploy is due: it compares the latest stable
+# releases with what the live page links to and dispatches Deploy when they
+# differ. Nothing is committed, because main is protected.
+
+on:
+  schedule:
+    - cron: '41 6,18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: refresh-release-numbers
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 24
+      - name: Compare the live page with the latest releases
+        id: compare
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/sync-releases.mjs --live
+      - name: Dispatch a deployment
+        if: steps.compare.outputs.stale == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --repo "$GITHUB_REPOSITORY" --ref main

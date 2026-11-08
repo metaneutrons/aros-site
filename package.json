@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "prebuild": "node scripts/clean-output.mjs",
     "build": "astro check --minimumFailingSeverity hint && astro build",
+    "sync": "node scripts/sync-releases.mjs",
     "verify": "node scripts/check-site.mjs",
     "worker:check": "python3 scripts/check-publication.py --configuration wrangler.jsonc --assets dist && wrangler deploy --dry-run --outdir .wrangler-output",
     "worker:deploy": "wrangler deploy",

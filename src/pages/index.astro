@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import releases from '../data/releases.json';
+
+const { tools, toolchains } = releases;
 
 const projects = [
   {
@@ -17,7 +20,7 @@ const projects = [
     label: 'Developer workflow',
     title: 'AROS tools',
     description:
-      'v0.3.12 command-line tools for source checkout, builds, toolchains, diagnostics, and boards.',
+      `v${tools.version} command-line tools for source checkout, builds, toolchains, diagnostics, and boards.`,
     primary: { label: 'Read the documentation', href: '/aros-tools/' },
     secondary: { label: 'Browse the code', href: 'https://github.com/metaneutrons/aros-tools' },
     tone: 'lime',
@@ -27,8 +30,8 @@ const projects = [
     label: 'Supply chain',
     title: 'Deterministic toolchains',
     description:
-      'v0.1.4 cross-compilers for Linux x86-64, Linux ARM64, and Apple silicon; PC and Raspberry Pi targets.',
-    primary: { label: 'Get v0.1.4', href: 'https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4' },
+      `v${toolchains.version} cross-compilers for Linux x86-64, Linux ARM64, and Apple silicon; PC and Raspberry Pi targets.`,
+    primary: { label: `Get v${toolchains.version}`, href: toolchains.url },
     secondary: { label: 'Qualification source', href: 'https://github.com/metaneutrons/aros-toolchains' },
     tone: 'violet',
   },
@@ -228,17 +231,17 @@ const principles = [
           <h2 id="roadmap-title">Tools and toolchains.<br />No images yet.</h2>
           <p>
             Stable releases are available for
-            {' '}<a href="https://github.com/metaneutrons/aros-tools/releases/tag/v0.3.12">AROS tools v0.3.12</a>
+            {' '}<a href={tools.url}>AROS tools v{tools.version}</a>
             {' '}and
-            {' '}<a href="https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4">AROS Toolchains v0.1.4</a>.
+            {' '}<a href={toolchains.url}>AROS Toolchains v{toolchains.version}</a>.
             {' '}No system images are published yet.
           </p>
           <a class="text-link" href="/aros-tools/reference/release-status/">See release status <span aria-hidden="true">→</span></a>
         </div>
         <div class="status-board" aria-label="Ecosystem publication status">
           <div><span class="status-dot active"></span><strong>Source</strong><small>Public integration fork</small></div>
-          <div><span class="status-dot live"></span><strong>Tools</strong><small>Stable v0.3.12</small></div>
-          <div><span class="status-dot live"></span><strong>Toolchains</strong><small>Stable v0.1.4</small></div>
+          <div><span class="status-dot live"></span><strong>Tools</strong><small>Stable v{tools.version}</small></div>
+          <div><span class="status-dot live"></span><strong>Toolchains</strong><small>Stable v{toolchains.version}</small></div>
           <div><span class="status-dot planned"></span><strong>Images</strong><small>Not published</small></div>
         </div>
       </section>

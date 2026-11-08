@@ -1,6 +1,10 @@
 import { lstat, readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 
+const releases = JSON.parse(
+  await readFile(new URL('../src/data/releases.json', import.meta.url), 'utf8'),
+);
+
 const root = path.resolve('dist');
 const required = new Set([
   '404.html',
@@ -103,10 +107,10 @@ try {
     'href="/aros-tools/"',
     'href="https://github.com/metaneutrons/AROS-NX"',
     'href="https://github.com/metaneutrons/aros-toolchains"',
-    'href="https://github.com/metaneutrons/aros-tools/releases/tag/v0.3.12"',
-    'href="https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4"',
-    'Stable v0.3.12',
-    'Stable v0.1.4',
+    `href="${releases.tools.url}"`,
+    `href="${releases.toolchains.url}"`,
+    `Stable v${releases.tools.version}`,
+    `Stable v${releases.toolchains.version}`,
   ]) {
     if (!index.includes(marker)) {
       fail(`landing page lacks required marker: ${marker}`);

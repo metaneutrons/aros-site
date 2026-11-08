@@ -1,0 +1,12 @@
+{
+  "tools": {
+    "tag": "v0.6.13",
+    "version": "0.6.13",
+    "url": "https://github.com/metaneutrons/aros-tools/releases/tag/v0.6.13"
+  },
+  "toolchains": {
+    "tag": "v0.1.4",
+    "version": "0.1.4",
+    "url": "https://github.com/metaneutrons/aros-toolchains/releases/tag/v0.1.4"
+  }
+}
