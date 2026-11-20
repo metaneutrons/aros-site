@@ -14,7 +14,7 @@
     "check": "python3 scripts/check-workflows.py && npm run build && npm run verify && npm run worker:check"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/sitemap": "3.7.5",
     "astro": "7.3.5"
   },
   "devDependencies": {
